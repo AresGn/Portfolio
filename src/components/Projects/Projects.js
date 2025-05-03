@@ -2,12 +2,13 @@ import React from "react";
 import { Container, Row, Col } from "react-bootstrap";
 import ProjectCard from "./ProjectCards";
 import Particle from "../Particle";
-import leaf from "../../Assets/Projects/leaf.png";
-import emotion from "../../Assets/Projects/emotion.png";
-import editor from "../../Assets/Projects/codeEditor.png";
-import chatify from "../../Assets/Projects/chatify.png";
-import suicide from "../../Assets/Projects/suicide.png";
+import yllenCrea from "../../Assets/Projects/yllen-crea.png";
+import monMedicament from "../../Assets/Projects/MonMedicament.png";
+import wordMagician from "../../Assets/Projects/WordMagician.png";
+import autoSavePro from "../../Assets/Projects/AutoSavePro.png";
+import teachAssist from "../../Assets/Projects/TeachAssist.png";
 import bitsOfCode from "../../Assets/Projects/blog.png";
+import catholicQuiz from "../../Assets/Projects/Catholic Quiz App.png";
 
 function Projects() {
   return (
@@ -23,12 +24,12 @@ function Projects() {
         <Row style={{ justifyContent: "center", paddingBottom: "10px" }}>
           <Col md={4} className="project-card">
             <ProjectCard
-              imgPath={chatify}
+              imgPath={wordMagician}
               isBlog={false}
-              title="Chatify"
-              description="Personal Chat Room or Workspace to share resources and hangout with friends build with react.js, Material-UI, and Firebase. Have features which allows user for realtime messaging, image sharing as well as supports reactions on messages."
-              ghLink="https://github.com/AresGn/Chatify"
-              demoLink="https://chatify-49.web.app/"
+              title="WordMagician"
+              description="A Microsoft Word add-in that integrates AI capabilities into your word processing. WordMagician enhances your document creation experience with intelligent features, making writing more efficient and effective."
+              ghLink="https://github.com/AresGn/WordMagician"
+              demoLink="https://word-magician.vercel.app"
             />
           </Col>
 
@@ -45,46 +46,56 @@ function Projects() {
 
           <Col md={4} className="project-card">
             <ProjectCard
-              imgPath={editor}
+              imgPath={autoSavePro}
               isBlog={false}
-              title="Editor.io"
-              description="Online code and markdown editor build with react.js. Online Editor which supports html, css, and js code with instant view of website. Online markdown editor for building README file which supports GFM, Custom Html tags with toolbar and instant preview.Both the editor supports auto save of work using Local Storage"
-              ghLink="https://github.com/AresGn/Editor.io"
-              demoLink="https://editor.soumya-jit.tech/"              
+              title="AutoSavePro"
+              description="A Windows application that monitors and automatically saves files opened in various software, protecting users' work against accidental data loss. AutoSavePro runs in the background, providing seamless protection for your important documents."
+              ghLink="https://github.com/AresGn/Autosave_site"
+              demoLink="https://autosavepro.vercel.app"              
             />
           </Col>
 
           <Col md={4} className="project-card">
             <ProjectCard
-              imgPath={leaf}
+              imgPath={yllenCrea}
               isBlog={false}
-              title="Plant AI"
-              description="Used the plant disease dataset from Kaggle and trained a image classifer model using 'PyTorch' framework using CNN and Transfer Learning with 38 classes of various plant leaves. The model was successfully able to detect diseased and healthy leaves of 14 unique plants. I was able to achieve an accuracy of 98% by using Resnet34 pretrained model."
-              ghLink="https://github.com/AresGn/Plant_AI"
-              demoLink="https://plant49-ai.herokuapp.com/"
+              title="yllen-crea"
+              description="A landing page for a resin jewelry creation business. This elegant, responsive site showcases unique handcrafted pieces, featuring a modern design that highlights the artistry and craftsmanship behind each product."
+              ghLink="https://github.com/AresGn/yllen_crea"
+              demoLink="https://yllen-crea.vercel.app/"
             />
           </Col>
 
           <Col md={4} className="project-card">
             <ProjectCard
-              imgPath={suicide}
+              imgPath={teachAssist}
               isBlog={false}
-              title="Ai For Social Good"
-              description="Using 'Natural Launguage Processing' for the detection of suicide-related posts and user's suicide ideation in cyberspace  and thus helping in sucide prevention."
-              ghLink="https://github.com/AresGn/AI_For_Social_Good"
-              demoLink="https://kloo.me/Ares-blog"
+              title="TeachAssist"
+              description="A desktop application that statically analyzes Java code submitted by students based on rules defined by the teacher in JSON files. It aims to automate part of the grading process, provide structured data points for further evaluation, and organize submissions efficiently."
+              ghLink="https://github.com/AresGn/TeachAssist_Py"
+              demoLink="https://teachassist-demo.vercel.app"
             />
           </Col>
 
           <Col md={4} className="project-card">
             <ProjectCard
-              imgPath={emotion}
+              imgPath={monMedicament}
               isBlog={false}
-              title="Face Recognition and Emotion Detection"
-              description="Trained a CNN classifier using 'FER-2013 dataset' with Keras and tensorflow backened. The classifier sucessfully predicted the various types of emotions of human. And the highest accuracy obtained with the model was 60.1%.
-              Then used Open-CV to detect the face in an image and then pass the face to the classifer to predict the emotion of a person."
-              ghLink="https://github.com/AresGn/Face_And_Emotion_Detection"
-              demoLink="https://kloo.me/Ares-blog"
+              title="MonMedicament"
+              description="UI design for a web platform that revolutionizes medication search in Africa. MonMedicament is an intuitive digital platform that connects patients and pharmacies through cutting-edge technology, making healthcare accessible to all by enabling patients to quickly and efficiently find their treatments."
+              ghLink=""
+              demoLink="https://www.figma.com/design/Mywd6NLRCvDZhYJl3ZrFzd/PharmLocator?node-id=0-1&t=LxeJvPxEMOvGugRr-1"
+            />
+          </Col>
+
+          <Col md={4} className="project-card">
+            <ProjectCard
+              imgPath={catholicQuiz}
+              isBlog={false}
+              title="Catholic Quiz App"
+              description="UX/UI design for a mobile application focused on Catholic quizzes. This interactive learning platform features an engaging interface with carefully crafted user journeys, providing an educational experience through religious questions and answers in an intuitive mobile environment."
+              ghLink=""
+              demoLink="https://www.figma.com/proto/Yk1kbQTsobmYBIRFU353YO/App_Catholique?node-id=124-530&p=f&t=lw0UIitVsMepvrlO-1&scaling=scale-down&content-scaling=fixed&page-id=1%3A2"
             />
           </Col>
         </Row>
