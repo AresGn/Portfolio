@@ -8,51 +8,56 @@ import {
   AiFillInstagram,
 } from "react-icons/ai";
 import { FaLinkedinIn } from "react-icons/fa";
+import { useLanguage } from "../../translations/LanguageContext";
 
 function Home2() {
+  const { translations, language } = useLanguage();
+  
+  // Phrases de transition pour chaque langue
+  const transitionPhrases = {
+    en: "while for web applications, I rely on",
+    fr: "tandis que pour les applications web, j'utilise",
+    es: "mientras que para aplicaciones web, utilizo"
+  };
+  
   return (
     <Container fluid className="home-about-section" id="about">
       <Container>
         <Row>
           <Col md={8} className="home-about-description">
             <h1 style={{ fontSize: "2.6em" }}>
-              LET ME <span className="purple"> INTRODUCE </span> MYSELF
+              <span className="purple">{translations.home2.introduce}</span>
             </h1>
             <p className="home-about-body">
-              I am passionate about technology and deeply believe in the transformative power of 
-              programming to shape our world day by day.
+              {translations.home2.about_body}
               <br />
-              <br />I'm proficient in modern languages such as
+              <br />{translations.home2.languages}
               <i>
-                <b className="purple"> JavaScript, Python, and C#. </b>
+                <b className="purple"> {translations.home2.languages_list} </b>
               </i>
               <br />
               <br />
-              My areas of expertise focus on developing innovative &nbsp;
+              {translations.home2.expertise} &nbsp;
               <i>
-                <b className="purple">Web Applications and Mobile Solutions</b>, along with 
-                a strong interest in{" "}
+                <b className="purple">{translations.home2.expertise_details}</b>
+                </i>, {translations.home2.interest}{" "}
                 <b className="purple">
-                  Blockchain Technology and Bitcoin.
+                  {translations.home2.interest_details}
                 </b>
-              </i>
               <br />
               <br />
-              I leverage my skills to create revolutionary products that can transform how we live 
-              by solving real-world challenges. For mobile development, I primarily use 
-              <b className="purple"> Flutter</b>, while for web applications, I rely on
+              {translations.home2.leverage}{" "}
+              <b className="purple"> {translations.home2.mobile_tech}</b>, {transitionPhrases[language] || transitionPhrases.en} 
               <i>
                 <b className="purple">
                   {" "}
-                  React.js and Next.js
+                  {translations.home2.web_tech}
                 </b>
               </i>
-              &nbsp; for performant, scalable solutions.
+              &nbsp; {translations.home2.web_desc}
               <br />
               <br />
-              Working with me isn't just about outsourcing a project—it's about establishing a 
-              collaborative partnership with consistent communication throughout the development process. 
-              I'm dedicated to ensuring your product or service authentically represents your brand's vision and values.
+              {translations.home2.partnership}
             </p>
           </Col>
           <Col md={4} className="myAvtar">
@@ -63,9 +68,9 @@ function Home2() {
         </Row>
         <Row>
           <Col md={12} className="home-about-social">
-            <h1>FIND ME ON</h1>
+            <h1>{translations.home2.find_me}</h1>
             <p>
-              Feel free to <span className="purple">connect </span>with me
+              <span className="purple">{translations.home2.connect}</span>
             </p>
             <ul className="home-about-social-links">
               <li className="social-icons">

@@ -1,40 +1,44 @@
 import React from "react";
 import Card from "react-bootstrap/Card";
 import { ImPointRight } from "react-icons/im";
+import { useLanguage } from "../../translations/LanguageContext";
 
 function AboutCard() {
+  const { translations } = useLanguage();
+  
   return (
     <Card className="quote-card-view">
       <Card.Body>
         <blockquote className="blockquote mb-0">
           <p style={{ textAlign: "justify" }}>
-            Hi Everyone, I am <span className="purple">Arès GNIMAGNON </span>
-            from <span className="purple"> Godomey, Bénin.</span>
+            {translations.about.intro} <span className="purple">Arès GNIMAGNON </span>
+            {translations.about.from} <span className="purple"> {translations.about.location}</span>
             <br />
-            I am currently employed as a software developer at MTN.
-            <br />
-            I have completed Integrated MSc (IMSc) in Maths and Computing at BIT
-            Mesra.
+            {translations.about.education}
             <br />
             <br />
-            Apart from coding, some other activities that I love to do!
+            {translations.about.passion}
+            <br />
+            <br />
+            {translations.about.brand}
+            <br />
+            <br />
+            {translations.about.activities}
           </p>
           <ul>
             <li className="about-activity">
-              <ImPointRight /> Playing Games
+              <ImPointRight /> {translations.about.activity1}
             </li>
             <li className="about-activity">
-              <ImPointRight /> Writing Tech Blogs
+              <ImPointRight /> {translations.about.activity2}
             </li>
             <li className="about-activity">
-              <ImPointRight /> Travelling
+              <ImPointRight /> {translations.about.activity3}
             </li>
           </ul>
 
           <p style={{ color: "rgb(155 126 172)" }}>
-            "Build now.
-            The world remembers nothing
-            but echoes of what dared to matter."{" "}
+            "{translations.about.quote}"{" "}
           </p>
           <footer className="blockquote-footer">Arès</footer>
         </blockquote>

@@ -741,3 +741,71 @@ button:focus {
 .fork-btn-inner::after {
   display: none !important;
 }
+
+/* Language Selector Styles */
+.language-selector {
+  position: relative;
+  margin-right: 10px;
+}
+
+.language-btn {
+  background-color: transparent !important;
+  border: 1px solid #c770f0 !important;
+  color: white !important;
+  z-index: 1;
+  transition: all 0.3s ease-out 0s !important;
+}
+
+.language-btn:hover {
+  background-color: #c95bf536 !important;
+  transform: scale(1.05) !important;
+  border-color: #c770f0 !important;
+}
+
+.language-dropdown {
+  position: absolute;
+  top: 100%;
+  right: 0;
+  margin-top: 0.5rem;
+  background-color: #1b1a2e;
+  border-radius: 5px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+  z-index: 1000;
+  overflow: hidden;
+  width: 150px;
+}
+
+.language-option {
+  display: block;
+  width: 100%;
+  padding: 8px 16px;
+  border: none;
+  background: none;
+  color: white;
+  text-align: left;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.language-option:hover {
+  background-color: #2d1950;
+}
+
+.language-option.active {
+  background-color: #c770f03d;
+  font-weight: bold;
+}
+
+@media (max-width: 767px) {
+  .language-selector {
+    margin-right: 0;
+    margin-left: 0;
+    margin-bottom: 10px;
+  }
+  
+  .language-dropdown {
+    width: 100%;
+    position: relative;
+    margin-top: 5px;
+  }
+}

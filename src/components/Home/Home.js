@@ -4,8 +4,11 @@ import homeLogo from "../../Assets/home-main.svg";
 import Particle from "../Particle";
 import Home2 from "./Home2";
 import Type from "./Type";
+import { useLanguage } from "../../translations/LanguageContext";
 
 function Home() {
+  const { translations } = useLanguage();
+  
   return (
     <section>
       <Container fluid className="home-section" id="home">
@@ -14,15 +17,15 @@ function Home() {
           <Row>
             <Col md={7} className="home-header">
               <h1 style={{ paddingBottom: 15 }} className="heading">
-                Hi There!{" "}
+                {translations.home.greeting}{" "}
                 <span className="wave" role="img" aria-labelledby="wave">
                   👋🏻
                 </span>
               </h1>
 
               <h1 className="heading-name">
-                I'M
-                <strong className="main-name"> GNIMAGNON ARES</strong>
+                {translations.home.intro}
+                <strong className="main-name"> {translations.home.name}</strong>
               </h1>
 
               <div style={{ padding: 50, textAlign: "left" }}>
