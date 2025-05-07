@@ -1,0 +1,117 @@
+.project-cta-section {
+  padding: 80px 0;
+  background-color: #f8f9fa;
+}
+
+.cta-title {
+  font-size: 2.5rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+  color: #1a1a1a;
+}
+
+.cta-description {
+  font-size: 1.2rem;
+  color: #666;
+  margin-bottom: 2rem;
+}
+
+.service-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  margin-bottom: 2rem;
+}
+
+.service-button {
+  min-width: 150px;
+  transition: all 0.3s ease;
+}
+
+.service-button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.project-cta-button {
+  background-color: #6c63ff;
+  border: none;
+  transition: all 0.3s ease;
+}
+
+.project-cta-button:hover {
+  background-color: #5a52d5;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.service-description {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.service-description h3 {
+  font-size: 1.8rem;
+  margin-bottom: 1rem;
+  color: #1a1a1a;
+}
+
+.service-description p {
+  font-size: 1.1rem;
+  color: #666;
+  line-height: 1.6;
+}
+
+.project-form {
+  background: white;
+  padding: 2rem;
+  border-radius: 12px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+}
+
+.form-label {
+  font-weight: 500;
+  color: #1a1a1a;
+}
+
+.form-control {
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  padding: 0.8rem;
+  transition: all 0.3s ease;
+}
+
+.form-control:focus {
+  border-color: #007bff;
+  box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25);
+}
+
+.submit-button {
+  width: 100%;
+  padding: 1rem;
+  font-size: 1.1rem;
+  font-weight: 600;
+  border-radius: 8px;
+  margin-top: 1rem;
+  transition: all 0.3s ease;
+}
+
+.submit-button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 123, 255, 0.2);
+}
+
+@media (max-width: 768px) {
+  .service-buttons {
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+
+  .service-button {
+    width: 100%;
+  }
+
+  .project-form {
+    padding: 1.5rem;
+  }
+} 

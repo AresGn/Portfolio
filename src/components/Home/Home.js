@@ -1,5 +1,6 @@
 import React from "react";
-import { Container, Row, Col } from "react-bootstrap";
+import { Container, Row, Col, Button } from "react-bootstrap";
+import { useNavigate } from "react-router-dom";
 import homeLogo from "../../Assets/home-main.svg";
 import Particle from "../Particle";
 import Home2 from "./Home2";
@@ -8,6 +9,23 @@ import { useLanguage } from "../../translations/LanguageContext";
 
 function Home() {
   const { translations } = useLanguage();
+  const navigate = useNavigate();
+  
+  const scrollToProjectCTA = () => {
+    // D'abord, on navigue vers la page des projets
+    navigate('/projects');
+    
+    // On attend que la navigation soit terminée et que le composant soit monté
+    setTimeout(() => {
+      const projectCTA = document.getElementById('project-cta-section');
+      if (projectCTA) {
+        projectCTA.scrollIntoView({ 
+          behavior: 'smooth',
+          block: 'start'
+        });
+      }
+    }, 500); // Augmentation du délai pour s'assurer que la navigation est terminée
+  };
   
   return (
     <section>
@@ -31,6 +49,21 @@ function Home() {
               <div style={{ padding: 50, textAlign: "left" }}>
                 <Type />
               </div>
+              
+              <Button
+                variant="primary"
+                size="lg"
+                className="project-cta-button"
+                onClick={scrollToProjectCTA}
+                style={{ 
+                  marginTop: "20px",
+                  position: "relative",
+                  zIndex: 10,
+                  cursor: "pointer"
+                }}
+              >
+                {translations.home.talkAboutProject}
+              </Button>
             </Col>
 
             <Col md={5} style={{ paddingBottom: 20 }}>

@@ -7,27 +7,28 @@ const fr = {
     resume: "CV"
   },
   home: {
-    greeting: "Bonjour!",
-    intro: "JE SUIS",
-    name: "ARES GNIMAGNON",
-    roles: ["Développeur", "Designer UI/UX", "Développeur Web", "Motion Designer", "Freelance"]
+    greeting: "Bonjour, je suis",
+    intro: "Je suis",
+    name: "Ares GNIMAGNON",
+    roles: ["Développeur", "Designer UI/UX", "Développeur Web", "Motion Designer", "Freelance"],
+    talkAboutProject: "Parlons de votre projet"
   },
   home2: {
-    introduce: "PERMETTEZ-MOI DE ME PRÉSENTER",
-    about_body: "Je suis passionné par la technologie et je crois profondément au pouvoir transformateur de la programmation pour façonner notre monde jour après jour.",
-    languages: "Je maîtrise des langages modernes tels que",
-    languages_list: "JavaScript, Python et C#.",
-    expertise: "Mes domaines d'expertise se concentrent sur le développement de solutions innovantes",
-    expertise_details: "Applications Web et Solutions Mobiles",
-    interest: "ainsi qu'un fort intérêt pour",
-    interest_details: "la Technologie Blockchain et Bitcoin.",
+    introduce: "Permettez-moi de me présenter",
+    about_body: "Je suis un développeur passionné qui aime résoudre des problèmes complexes et créer des expériences utilisateur exceptionnelles. J'utilise mes compétences pour créer des produits révolutionnaires qui peuvent transformer notre façon de vivre en résolvant des défis concrets.",
+    languages: "Je parle couramment",
+    languages_list: "Français, Anglais et Espagnol",
+    expertise: "Mon expertise se concentre sur",
+    expertise_details: "le développement d'applications mobiles et web",
+    interest: "avec un intérêt particulier pour",
+    interest_details: "l'expérience utilisateur et l'interface utilisateur",
     leverage: "J'utilise mes compétences pour créer des produits révolutionnaires qui peuvent transformer notre façon de vivre en résolvant des défis concrets. Pour le développement mobile, j'utilise principalement",
     mobile_tech: "Flutter",
     web_tech: "React.js et Next.js",
     web_desc: "pour des solutions performantes et évolutives.",
-    partnership: "Travailler avec moi n'est pas simplement externaliser un projet, c'est établir un partenariat collaboratif avec une communication constante tout au long du processus de développement. Je m'engage à garantir que votre produit ou service représente authentiquement la vision et les valeurs de votre marque.",
-    find_me: "RETROUVEZ-MOI SUR",
-    connect: "N'hésitez pas à me contacter"
+    partnership: "Je suis toujours ouvert à discuter de nouveaux projets, d'idées créatives ou d'opportunités de partenariat.",
+    find_me: "TROUVEZ-MOI SUR",
+    connect: "N'hésitez pas à me contacter sur ces plateformes."
   },
   about: {
     title: "Qui Suis-Je",
@@ -50,6 +51,33 @@ const fr = {
     title: "Mes Travaux Récents",
     description: "Voici quelques projets sur lesquels j'ai travaillé récemment.",
     project_heading: "Mes Travaux Récents",
+    cta: {
+      title: "Démarrons votre projet",
+      description: "Discutons de votre projet et voyons comment je peux vous aider à le concrétiser",
+      services: {
+        uiux: {
+          title: "Design UI/UX",
+          description: "Création d'interfaces utilisateur intuitives et d'expériences utilisateur mémorables"
+        },
+        web: {
+          title: "Développement Web",
+          description: "Développement de sites web et d'applications web modernes et performantes"
+        },
+        mobile: {
+          title: "Développement Mobile",
+          description: "Création d'applications mobiles natives et cross-platform"
+        }
+      },
+      form: {
+        name: "Nom",
+        email: "Email",
+        projectDescription: "Description du projet",
+        budget: "Budget estimé",
+        timeline: "Délai souhaité",
+        requirements: "Cahier des charges (optionnel)",
+        submit: "Envoyer"
+      }
+    },
     wordmagician: {
       title: "WordMagician",
       description: "Un complément Microsoft Word qui intègre des capacités d'IA dans votre traitement de texte. WordMagician améliore votre expérience de création de documents avec des fonctionnalités intelligentes, rendant l'écriture plus efficace et performante."

@@ -7,10 +7,11 @@ const en = {
     resume: "Resume"
   },
   home: {
-    greeting: "Hi There!",
-    intro: "I'M",
-    name: "ARES GNIMAGNON",
-    roles: ["Developer", "UI/UX Designer", "Web Developer", "Motion Designer", "Freelancer"]
+    greeting: "Hi, I am",
+    intro: "I am",
+    name: "Ares GNIMAGNON",
+    roles: ["Developer", "UI/UX Designer", "Web Developer", "Motion Designer", "Freelancer"],
+    talkAboutProject: "Let's talk about your project"
   },
   home2: {
     introduce: "LET ME INTRODUCE MYSELF",
@@ -77,6 +78,33 @@ const en = {
     catholicquiz: {
       title: "Catholic Quiz App",
       description: "UX/UI design for a mobile application focused on Catholic quizzes. This interactive learning platform features an engaging interface with carefully crafted user journeys, providing an educational experience through religious questions and answers in an intuitive mobile environment."
+    },
+    cta: {
+      title: "Let's Start Your Project",
+      description: "Let's discuss your project and see how I can help you bring it to life",
+      services: {
+        uiux: {
+          title: "UI/UX Design",
+          description: "Creating intuitive user interfaces and memorable user experiences"
+        },
+        web: {
+          title: "Web Development",
+          description: "Developing modern and performant websites and web applications"
+        },
+        mobile: {
+          title: "Mobile Development",
+          description: "Creating native and cross-platform mobile applications"
+        }
+      },
+      form: {
+        name: "Name",
+        email: "Email",
+        projectDescription: "Project Description",
+        budget: "Estimated Budget",
+        timeline: "Desired Timeline",
+        requirements: "Requirements Document (optional)",
+        submit: "Submit"
+      }
     }
   },
   resume: {

@@ -7,9 +7,10 @@ const es = {
     resume: "Currículum"
   },
   home: {
-    greeting: "¡Hola!",
-    intro: "SOY",
-    name: "ARES GNIMAGNON",
+    greeting: "Hola, soy",
+    intro: "Soy",
+    name: "Ares GNIMAGNON",
+    talkAboutProject: "Hablemos de tu proyecto",
     roles: ["Desarrollador", "Diseñador UI/UX", "Desarrollador Web", "Motion Designer", "Freelancer"]
   },
   home2: {
@@ -77,6 +78,33 @@ const es = {
     catholicquiz: {
       title: "Catholic Quiz App",
       description: "Diseño UX/UI para una aplicación móvil centrada en cuestionarios católicos. Esta plataforma de aprendizaje interactiva presenta una interfaz atractiva con recorridos de usuario cuidadosamente elaborados, proporcionando una experiencia educativa a través de preguntas y respuestas religiosas en un entorno móvil intuitivo."
+    },
+    cta: {
+      title: "Empecemos tu proyecto",
+      description: "Hablemos de tu proyecto y veamos cómo puedo ayudarte a hacerlo realidad",
+      services: {
+        uiux: {
+          title: "Diseño UI/UX",
+          description: "Creación de interfaces de usuario intuitivas y experiencias de usuario memorables"
+        },
+        web: {
+          title: "Desarrollo Web",
+          description: "Desarrollo de sitios web y aplicaciones web modernas y de alto rendimiento"
+        },
+        mobile: {
+          title: "Desarrollo Móvil",
+          description: "Creación de aplicaciones móviles nativas y multiplataforma"
+        }
+      },
+      form: {
+        name: "Nombre",
+        email: "Correo electrónico",
+        projectDescription: "Descripción del proyecto",
+        budget: "Presupuesto estimado",
+        timeline: "Plazo deseado",
+        requirements: "Documento de requisitos (opcional)",
+        submit: "Enviar"
+      }
     }
   },
   resume: {

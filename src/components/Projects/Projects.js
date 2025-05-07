@@ -10,6 +10,7 @@ import teachAssist from "../../Assets/Projects/TeachAssist.png";
 import bitsOfCode from "../../Assets/Projects/blog.png";
 import catholicQuiz from "../../Assets/Projects/Catholic Quiz App.png";
 import { useLanguage } from "../../translations/LanguageContext";
+import ProjectCTA from "./ProjectCTA";
 
 function Projects() {
   const { translations } = useLanguage();
@@ -103,6 +104,7 @@ function Projects() {
           </Col>
         </Row>
       </Container>
+      <ProjectCTA />
     </Container>
   );
 }
