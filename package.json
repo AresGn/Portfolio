@@ -48,5 +48,13 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "overrides": {
+    "typewriter-effect": {
+      "react": "^18.3.1"
+    },
+    "@react-pdf/renderer": {
+      "react": "^18.3.1"
+    }
   }
 }
