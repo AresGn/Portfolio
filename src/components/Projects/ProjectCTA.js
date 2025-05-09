@@ -1,7 +1,12 @@
 import React, { useState } from 'react';
-import { Container, Row, Col, Button, Form } from 'react-bootstrap';
+import { Container, Row, Col, Button, Form, Alert } from 'react-bootstrap';
 import { motion } from 'framer-motion';
 import { useLanguage } from '../../translations/LanguageContext';
+import { SimpleDatePicker } from '../ui/SimpleDatePicker';
+import { format } from 'date-fns';
+import { fr } from 'date-fns/locale';
+import 'react-day-picker/dist/style.css';
+import '../../styles/datepicker.css';
 import './ProjectCTA.css';
 
 const ProjectCTA = () => {
@@ -13,8 +18,10 @@ const ProjectCTA = () => {
     projectDescription: '',
     budget: '',
     timeline: '',
-    requirements: ''
   });
+  const [selectedDate, setSelectedDate] = useState(null);
+  const [submitStatus, setSubmitStatus] = useState({ show: false, type: '', message: '' });
+  const [isSubmitting, setIsSubmitting] = useState(false);
 
   const handleInputChange = (e) => {
     setFormData({
@@ -23,10 +30,71 @@ const ProjectCTA = () => {
     });
   };
 
-  const handleSubmit = (e) => {
+  const handleDateChange = (date) => {
+    setSelectedDate(date);
+    if (date) {
+      setFormData({
+        ...formData,
+        timeline: format(date, 'dd MMMM yyyy', { locale: fr })
+      });
+    } else {
+      setFormData({
+        ...formData,
+        timeline: ''
+      });
+    }
+  };
+
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    // Ici, vous pouvez ajouter la logique pour envoyer les données du formulaire
-    console.log('Form submitted:', formData);
+    setIsSubmitting(true);
+    
+    try {
+      // Using Formspree's free tier for form submission
+      const formId = process.env.REACT_APP_FORMSPREE_FORM_ID || 'xzblvmkj';
+      
+      const response = await fetch(`https://formspree.io/f/${formId}`, {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          ...formData,
+          service: activeForm
+        }),
+      });
+      
+      if (response.ok) {
+        // Reset form on success
+        setFormData({
+          name: '',
+          email: '',
+          projectDescription: '',
+          budget: '',
+          timeline: '',
+        });
+        setSelectedDate(null);
+        setSubmitStatus({
+          show: true,
+          type: 'success',
+          message: 'Votre message a été envoyé avec succès! Je vous contacterai bientôt.'
+        });
+      } else {
+        setSubmitStatus({
+          show: true,
+          type: 'danger',
+          message: 'Une erreur s\'est produite. Veuillez réessayer plus tard.'
+        });
+      }
+    } catch (error) {
+      setSubmitStatus({
+        show: true,
+        type: 'danger',
+        message: 'Une erreur s\'est produite. Veuillez réessayer plus tard.'
+      });
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   const formVariants = {
@@ -51,7 +119,6 @@ const ProjectCTA = () => {
                 variant={activeForm === 'uiux' ? 'primary' : 'outline-primary'}
                 onClick={() => {
                   setActiveForm('uiux');
-                  console.log('UI/UX button clicked');
                 }}
                 className="service-button"
               >
@@ -61,7 +128,6 @@ const ProjectCTA = () => {
                 variant={activeForm === 'web' ? 'primary' : 'outline-primary'}
                 onClick={() => {
                   setActiveForm('web');
-                  console.log('Web button clicked');
                 }}
                 className="service-button"
               >
@@ -71,7 +137,6 @@ const ProjectCTA = () => {
                 variant={activeForm === 'mobile' ? 'primary' : 'outline-primary'}
                 onClick={() => {
                   setActiveForm('mobile');
-                  console.log('Mobile button clicked');
                 }}
                 className="service-button"
               >
@@ -93,6 +158,16 @@ const ProjectCTA = () => {
                 <h3>{translations.projects.cta.services[activeForm].title}</h3>
                 <p>{translations.projects.cta.services[activeForm].description}</p>
               </div>
+
+              {submitStatus.show && (
+                <Alert 
+                  variant={submitStatus.type} 
+                  onClose={() => setSubmitStatus({ show: false, type: '', message: '' })} 
+                  dismissible
+                >
+                  {submitStatus.message}
+                </Alert>
+              )}
 
               <Form onSubmit={handleSubmit} className="project-form">
                 <Form.Group className="mb-3">
@@ -141,25 +216,22 @@ const ProjectCTA = () => {
 
                 <Form.Group className="mb-3">
                   <Form.Label>{translations.projects.cta.form.timeline}</Form.Label>
-                  <Form.Control
-                    type="text"
-                    name="timeline"
-                    value={formData.timeline}
-                    onChange={handleInputChange}
-                  />
+                  <div className="date-picker-wrapper">
+                    <SimpleDatePicker 
+                      value={selectedDate}
+                      onChange={handleDateChange}
+                      placeholder={translations.projects.cta.form.timeline}
+                    />
+                  </div>
                 </Form.Group>
 
-                <Form.Group className="mb-3">
-                  <Form.Label>{translations.projects.cta.form.requirements}</Form.Label>
-                  <Form.Control
-                    type="file"
-                    name="requirements"
-                    onChange={handleInputChange}
-                  />
-                </Form.Group>
-
-                <Button variant="primary" type="submit" className="submit-button">
-                  {translations.projects.cta.form.submit}
+                <Button 
+                  variant="primary" 
+                  type="submit" 
+                  className="submit-button"
+                  disabled={isSubmitting}
+                >
+                  {isSubmitting ? 'Envoi en cours...' : translations.projects.cta.form.submit}
                 </Button>
               </Form>
             </motion.div>

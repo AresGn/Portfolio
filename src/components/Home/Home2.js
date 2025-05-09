@@ -1,5 +1,6 @@
 import React from "react";
-import { Container, Row, Col } from "react-bootstrap";
+import { Container, Row, Col, Button } from "react-bootstrap";
+import { useNavigate } from "react-router-dom";
 import myImg from "../../Assets/avatar.png";
 import Tilt from "react-parallax-tilt";
 import {
@@ -12,12 +13,42 @@ import { useLanguage } from "../../translations/LanguageContext";
 
 function Home2() {
   const { translations, language } = useLanguage();
+  const navigate = useNavigate();
   
   // Phrases de transition pour chaque langue
   const transitionPhrases = {
     en: "while for web applications, I rely on",
     fr: "tandis que pour les applications web, j'utilise",
     es: "mientras que para aplicaciones web, utilizo"
+  };
+  
+  const scrollToProjectCTA = () => {
+    // Navigate to projects page with correct path (singular "project" not "projects")
+    navigate('/project');
+    
+    // Wait for navigation to complete and component to mount
+    setTimeout(() => {
+      try {
+        // Essayer de trouver la section par ID
+        const projectCTA = document.getElementById('project-cta-section');
+        if (projectCTA) {
+          // Scroll avec un offset pour éviter que l'en-tête ne cache la section
+          window.scrollTo({
+            top: projectCTA.getBoundingClientRect().top + window.pageYOffset - 80,
+            behavior: 'smooth'
+          });
+        } else {
+          console.warn("Project CTA section not found in the DOM after navigation");
+          // Plan B: faire défiler vers le bas de la page
+          window.scrollTo({
+            top: document.body.scrollHeight,
+            behavior: 'smooth'
+          });
+        }
+      } catch (error) {
+        console.error("Error scrolling to project CTA section:", error);
+      }
+    }, 2000); // Augmentation du délai pour s'assurer que la page est complètement chargée
   };
   
   return (
@@ -60,12 +91,32 @@ function Home2() {
               {translations.home2.partnership}
             </p>
           </Col>
-          <Col md={4} className="myAvtar">
+          <Col md={4} className="myAvtar d-flex justify-content-center align-items-center">
             <Tilt>
               <img src={myImg} className="img-fluid" alt="avatar" />
             </Tilt>
           </Col>
         </Row>
+        
+        <Row className="mt-5">
+          <Col className="d-flex justify-content-center">
+            <div style={{
+              position: "relative",
+              zIndex: 10000,
+              marginBottom: "40px"
+            }}>
+              <Button
+                variant="primary"
+                size="lg"
+                className="project-cta-button"
+                onClick={scrollToProjectCTA}
+              >
+                {translations.home.talkAboutProject}
+              </Button>
+            </div>
+          </Col>
+        </Row>
+        
         <Row>
           <Col md={12} className="home-about-social">
             <h1>{translations.home2.find_me}</h1>

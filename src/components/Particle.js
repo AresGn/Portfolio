@@ -36,17 +36,19 @@ function Particle() {
         interactivity: {
           events: {
             onclick: {
-              enable: true,
-              mode: "push",
+              enable: false,
+            },
+            onhover: {
+              enable: false,
             },
           },
-          modes: {
-            push: {
-              particles_nb: 1,
-            },
-          },
+          detect_on: "canvas",
         },
         retina_detect: true,
+        fullScreen: {
+          enable: true,
+          zIndex: -1
+        },
       }}
     />
   );

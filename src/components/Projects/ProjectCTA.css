@@ -114,4 +114,45 @@
   .project-form {
     padding: 1.5rem;
   }
+}
+
+/* DatePicker styles */
+.date-picker-wrapper {
+  margin: 0.5rem 0;
+}
+
+.simple-date-picker .date-picker-button {
+  width: 100%;
+  padding: 0.8rem !important;
+  font-size: 1rem !important;
+  border: 1px solid #ddd !important;
+  background-color: #fff !important;
+  color: #333 !important;
+  border-radius: 8px !important;
+  transition: all 0.3s ease;
+  text-align: left;
+  box-shadow: none !important;
+}
+
+.simple-date-picker .date-picker-button:hover {
+  border-color: #6c63ff !important;
+  box-shadow: 0 0 0 0.2rem rgba(108, 99, 255, 0.25) !important;
+  background-color: #fff !important;
+  transform: none !important;
+}
+
+.simple-date-picker .calendar-icon {
+  color: #6c63ff;
+}
+
+/* Style for the popover */
+#date-picker-popover {
+  border-radius: 8px;
+  border: 1px solid #ddd;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
+}
+
+/* Ensure dropdown is above other elements */
+.popover {
+  z-index: 9999 !important;
 } 

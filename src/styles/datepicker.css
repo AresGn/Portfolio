@@ -1,0 +1,38 @@
+/* Styles pour le date picker */
+.rdp {
+  --rdp-cell-size: 40px;
+  --rdp-accent-color: #6c63ff;
+  --rdp-background-color: #e7edff;
+  margin: 1em;
+}
+
+.rdp-day_selected, 
+.rdp-day_selected:focus-visible, 
+.rdp-day_selected:hover {
+  background-color: var(--rdp-accent-color);
+  color: white;
+}
+
+.rdp-button:hover:not([disabled]):not(.rdp-day_selected) {
+  background-color: var(--rdp-background-color);
+}
+
+.rdp-months {
+  display: flex;
+}
+
+.rdp-caption {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 1em;
+  text-align: left;
+}
+
+.rdp-nav {
+  white-space: nowrap;
+}
+
+.rdp-caption_label {
+  font-weight: 500;
+} 
